@@ -1,0 +1,27 @@
+{
+  "name": "desafio_entregable_2",
+  "version": "1.0.0",
+  "description": "servidor con dos rutas que devuelven productos a partir de un archivo txt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F-Scienza/desafio_express.git"
+  },
+  "keywords": [
+    "js",
+    "backend",
+    "express"
+  ],
+  "author": "f-scienza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/F-Scienza/desafio_express/issues"
+  },
+  "homepage": "https://github.com/F-Scienza/desafio_express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
