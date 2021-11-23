@@ -9,7 +9,7 @@
 //  y utilizar la clase Contenedor del desafío anterior para
 //  acceder a los datos persistidos del servidor.
 const express = require('express')
-
+const contenedor = require('./contenedor.js')
 const app = express()
 const PORT = 8080
 
@@ -18,5 +18,5 @@ app.get('/productos', (req, res)=>{
 })
 
 app.get('/productoRandom', (req, res) => {
-    
+
 }); 
