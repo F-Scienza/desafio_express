@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/F-Scienza/desafio_express#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "heroku": "^7.59.2",
+    "nodemon": "^2.0.15"
   }
 }

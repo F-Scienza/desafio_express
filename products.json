@@ -1,0 +1,32 @@
+[
+	{
+		"title": "arroz",
+		"price": 70,
+		"thumbnail": "url",
+		"id": 1
+	},
+	{
+		"title": "fideos",
+		"price": 90,
+		"thumbnail": "url",
+		"id": 2
+	},
+	{
+		"title": "galletas",
+		"price": 200,
+		"thumbnail": "url",
+		"id": 3
+	},
+	{
+		"title": "gaseosa",
+		"price": 150,
+		"thumbnail": "url",
+		"id": 4
+	},
+	{
+		"title": "papel de cocina",
+		"price": 100,
+		"thumbnail": "url",
+		"id": 5
+	}
+]

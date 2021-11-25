@@ -11,10 +11,11 @@ class Contenedor {
 		try {
 			let data = await fs.promises.readFile(this.file);
 			this.productList = JSON.parse(data);
+			console.log("se leyo el archivo")
 			for (const element of this.productList) {
 				if (element.id > this.id) this.id = element.id;
+				console.log("hizo el try " + this.id)
 			}
-			console.log('Last ID: ', this.id);
 		} catch (error) {
 			console.log('Aun no hay archivo');
 		}
@@ -33,8 +34,9 @@ class Contenedor {
 		await fs.promises.writeFile(this.file, string);
 	}
 
-	async getAll() {
+	async getAll() {a
 		let allProducts = this.productList;
+		console.log("get all")
 		return allProducts;
 	}
 

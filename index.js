@@ -9,14 +9,32 @@
 //  y utilizar la clase Contenedor del desafío anterior para
 //  acceder a los datos persistidos del servidor.
 const express = require('express')
-const contenedor = require('./contenedor.js')
+const Contenedor = require('./contenedor')
+
 const app = express()
 const PORT = 8080
+app.listen(process.env.PORT || PORT);
+
+const productos = new Contenedor('products.json');
+
+let lista = productos.init();
+
+let lista2 =  productos.getAll()
+
+console.log(lista);
+console.log(lista2);
+
 
 app.get('/productos', (req, res)=>{
-
+    res.send({msj: lista})
 })
 
 app.get('/productoRandom', (req, res) => {
-
+    function randomId(min, max) {
+			return Math.random() * (max - min) + min;
+		}
+    let idRandom = parseInt(randomId(0,productos.id))
+    let randomProduct = productos.getById(idRandom);
+    
+    res.send({ randomProduct })
 }); 
