@@ -11,14 +11,20 @@ class Contenedor {
 		try {
 			let data = await fs.promises.readFile(this.file);
 			this.productList = JSON.parse(data);
-			console.log("se leyo el archivo")
+			console.log('se leyo el archivo');
 			for (const element of this.productList) {
 				if (element.id > this.id) this.id = element.id;
-				console.log("hizo el try " + this.id)
+				console.log(`hizo el try ${this.id} ${element.title}`);
 			}
 		} catch (error) {
 			console.log('Aun no hay archivo');
 		}
+	}
+
+	async getAll() {
+		let allProducts = JSON.stringify(this.productList);
+		console.log('se ejecutó get all ');
+		return allProducts
 	}
 
 	async save(object) {
@@ -32,12 +38,6 @@ class Contenedor {
 	async write() {
 		let string = JSON.stringify(this.productList);
 		await fs.promises.writeFile(this.file, string);
-	}
-
-	async getAll() {a
-		let allProducts = this.productList;
-		console.log("get all")
-		return allProducts;
 	}
 
 	async deleteAll() {

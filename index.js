@@ -12,21 +12,15 @@ const express = require('express')
 const Contenedor = require('./contenedor')
 
 const app = express()
-const PORT = 8080
+const PORT = 3000
 app.listen(process.env.PORT || PORT);
 
 const productos = new Contenedor('products.json');
-
-let lista = productos.init();
-
-let lista2 =  productos.getAll()
-
-console.log(lista);
-console.log(lista2);
-
+productos.init()
 
 app.get('/productos', (req, res)=>{
-    res.send({msj: lista})
+    let lista = productos.getAll()
+    res.send({ lista: lista})
 })
 
 app.get('/productoRandom', (req, res) => {
