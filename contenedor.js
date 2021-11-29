@@ -11,14 +11,14 @@ class Contenedor {
 		try {
 			let data = await fs.promises.readFile(this.file);
 			this.productList = JSON.parse(data);
-			console.log('se leyo el archivo');
 			for (const element of this.productList) {
 				if (element.id > this.id) this.id = element.id;
-				console.log(`hizo el try ${this.id} ${element.title}`);
 			}
 		} catch (error) {
 			console.log('Aun no hay archivo');
 		}
+		console.log(`inicio el archivo`);
+
 	}
 
 	async getAll() {
@@ -45,8 +45,10 @@ class Contenedor {
 		await this.write();
 	}
 
-	async getById(id) {
-		this.productList.map();
+	async getById(searcheId) {
+		this.productList[searcheId]
+		console.log(`get by id ${searcheId+1}: ${JSON.stringify(this.productList[searcheId])}`);
+		return this.productList[searcheId];
 	}
 
 	async deleteById(id) {
